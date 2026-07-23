@@ -46,25 +46,67 @@ und macht die Datenschutzerklärung wasserdicht.
 ins Web-Root (`/htdocs` bzw. `/public_html`) hochladen → fertig. SSL/HTTPS aktivieren
 (bei allen per Klick, Let's Encrypt).
 
-### 🥈 Schnellster Start (kostenlos, 5 Minuten): **Cloudflare Pages** oder **Netlify**
-Wenn du erst mal *live* sein willst, ohne dich um Server zu kümmern:
+### 🥈 Aktuell im Einsatz: **Netlify** (kostenlos)
 
-**Netlify (am einfachsten):**
-1. netlify.com → Account anlegen
-2. „Add new site" → **„Deploy manually"** → den **Ordner `website/` einfach reinziehen**
-3. Läuft sofort unter `xyz.netlify.app` (HTTPS automatisch)
-4. Eigene Domain: „Domain settings" → Domain hinzufügen → DNS beim Registrar umstellen
-
-**Cloudflare Pages:** analog, ebenfalls kostenlos, sehr schnelles CDN.
+**Cloudflare Pages** ginge analog — ebenfalls kostenlos, sehr schnelles CDN.
 
 > Hinweis: Beides sind US-Unternehmen. Rechtlich okay (AVV abschließen, in der
-> Datenschutzerklärung nennen), aber für deine „deutsch & datenschutzfreundlich"-Story
-> ist ein DE-Hoster die sauberere Erzählung. **Mein Vorschlag: mit Netlify starten,
-> bei ernsthaftem Launch auf einen deutschen Hoster umziehen.**
+> Datenschutzerklärung nennen — steht dort inkl. Drittlandtransfer-Hinweis), aber für die
+> „deutsch & datenschutzfreundlich"-Story ist ein DE-Hoster die sauberere Erzählung.
+> **Vorschlag: mit Netlify starten, bei ernsthaftem Launch auf einen deutschen Hoster umziehen.**
 
-### Nicht empfohlen für dich: GitHub Pages
-Ginge auch, bräuchte aber ein **öffentliches** Repo — dein App-Repo ist privat und
-enthält Kopierschutz-Code. Dann lieber ein separates Repo nur für die Website.
+---
+
+## 2b. ⭐ Netlify mit GitHub verbinden (Continuous Deployment)
+
+**Das ist der empfohlene Weg** — danach nie wieder Dateien hochladen. Jeder `git push`
+deployt automatisch in ~30 Sekunden.
+
+**Was du dadurch bekommst:**
+- Automatisches Deployment bei jedem Push auf `main`
+- **Deploy-Historie** mit Ein-Klick-Rollback auf jede frühere Version
+- **Deploy-Previews** für Branches (testen, bevor es live geht)
+- Domain & HTTPS bleiben durchgehend konfiguriert
+
+### Bestehende Site verknüpfen (Domain bleibt erhalten — empfohlen)
+
+1. Netlify → deine Site anklicken
+2. **Site configuration → Build & deploy → Continuous deployment**
+3. Bei „Repository" auf **„Link repository"**
+4. **GitHub** wählen → autorisieren
+   *(Tipp: die Netlify-App auf **nur dieses eine Repo** beschränken)*
+5. Repo auswählen: **`maikhartmann/krypto-steuer-website`**
+6. **Build-Einstellungen — der einzige Stolperstein:**
+
+   | Feld | Wert |
+   |---|---|
+   | Branch to deploy | `main` |
+   | Base directory | *leer lassen* |
+   | **Build command** | **LEER LASSEN** ← Netlify schlägt oft etwas vor; hier gibt es nichts zu bauen |
+   | **Publish directory** | *leer lassen* bzw. `.` (index.html liegt im Repo-Root) |
+
+7. Speichern → Netlify deployt sofort aus dem Repo
+
+> Alternative: „Add new site → Import an existing project → GitHub". Erzeugt aber eine
+> **neue** Site — dann müsstest du die Domain umhängen. Deshalb ist Variante oben sauberer.
+
+### Ab dann: Änderungen live bringen
+
+```bash
+cd ~/Documents/dev/krypto-steuer-website
+git add -A
+git commit -m "Was geändert wurde"
+git push
+```
+→ Netlify baut und veröffentlicht automatisch. Status siehst du unter „Deploys".
+
+> Falls ein Push mal mit `RPC failed; HTTP 400` abbricht (kam beim ersten Mal vor):
+> `git config http.postBuffer 524288000` — ist im Repo bereits gesetzt.
+
+### GitHub Pages als Alternative
+Wäre jetzt möglich (das Website-Repo ist öffentlich), bietet aber weniger Komfort als
+Netlify (keine Deploy-Previews, umständlichere Domain-Einrichtung). Nur sinnvoll, wenn du
+Netlify loswerden willst.
 
 ---
 
@@ -130,5 +172,5 @@ website/
     └── report.png      Screenshot: Steuerberater-Report
 ```
 
-**Lokal ansehen:** `open website/index.html` — oder mit Server:
-`cd website && python3 -m http.server 8080` → http://localhost:8080
+**Lokal ansehen:** `open index.html` — oder mit Server: `python3 -m http.server 8080` → http://localhost:8080
+
