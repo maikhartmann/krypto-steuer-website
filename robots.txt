@@ -1,0 +1,5 @@
+# TODO: DEINE-DOMAIN.de durch echte Domain ersetzen
+User-agent: *
+Allow: /
+
+Sitemap: https://DEINE-DOMAIN.de/sitemap.xml

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!-- TODO: DEINE-DOMAIN.de überall durch echte Domain ersetzen (canonical, og:url, sitemap.xml) -->
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krypto-Steuer – Lokale Krypto-Steuer-Software für Deutschland (§23/§22/§20)</title>
+<meta name="description" content="Lokale Krypto-Steuer-Software für Deutschland: §23/§22/§20 EStG für Solana, Ethereum, Bitcoin & DeFi. Ohne Cloud, ohne Konto – deine Daten bleiben auf dem Rechner.">
+<meta name="robots" content="index,follow">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://DEINE-DOMAIN.de/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Krypto-Steuer">
+<meta property="og:title" content="Krypto-Steuer – Lokale Krypto-Steuer-Software für Deutschland (§23/§22/§20)">
+<meta property="og:description" content="Deutsche Krypto-Steuer-Reports (§23/§22/§20) für Solana, Ethereum, Bitcoin & DeFi – lokal auf deinem Rechner, ohne Cloud, ohne Konto, nachprüfbar.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://DEINE-DOMAIN.de/">
+<meta property="og:image" content="https://DEINE-DOMAIN.de/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Krypto-Steuer – lokale Krypto-Steuer-Software für Deutschland">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Krypto-Steuer – Lokale Krypto-Steuer-Software für Deutschland (§23/§22/§20)">
+<meta name="twitter:description" content="Deutsche Krypto-Steuer-Reports (§23/§22/§20) für Solana, Ethereum, Bitcoin & DeFi – lokal, ohne Cloud, ohne Konto, nachprüfbar.">
+<meta name="twitter:image" content="https://DEINE-DOMAIN.de/assets/og-image.png">
+
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230F7A63'/%3E%3Cpath d='M8 11V9a4 4 0 018 0v2m-9 0h10v6a1 1 0 01-1 1H8a1 1 0 01-1-1z' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- JSON-LD: SoftwareApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Krypto-Steuer",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "macOS, Windows",
+  "description": "Lokale Krypto-Steuer-Software für Deutschland: erstellt Steuer-Reports nach §23/§22/§20 EStG für Solana, Ethereum, Bitcoin und weitere Quellen inklusive DeFi. Läuft komplett lokal, ohne Cloud und ohne Konto.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Kostenlose Beta"
+  },
+  "featureList": [
+    "16+ Quellen: Solana, Ethereum, Base, Bitcoin, Sui, Tron, Hyperliquid, Kraken, Bybit, Binance, BingX, Blofin, Trade Republic, Ledger, CSV",
+    "Deutsche Steuer-Reports nach §23, §22 und §20 EStG",
+    "Komplexes DeFi & Solana: Swaps über realen Gegenwert, Anschaffungskosten über Wallet-Grenzen",
+    "Vollständigkeitsnachweis durch On-Chain-Reconciliation",
+    "API-Keys verschlüsselt im OS-Schlüsselbund, nur Read-only",
+    "Läuft komplett lokal, ohne Cloud, ohne Telemetrie, ohne Tracking"
+  ]
+}
+</script>
+
+<!-- JSON-LD: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MH Softwareentwicklung",
+  "url": "https://DEINE-DOMAIN.de/",
+  "founder": {
+    "@type": "Person",
+    "name": "Maik Hartmann"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Am Kirchberg 7",
+    "postalCode": "85293",
+    "addressLocality": "Reichertshausen",
+    "addressCountry": "DE"
+  }
+}
+</script>
+
+<!-- JSON-LD: FAQPage (spiegelt die sichtbaren FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ist das sicher — sieht jemand meine Keys oder Daten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Alles läuft lokal auf deinem Rechner. API-Keys werden verschlüsselt im OS-Schlüsselbund gespeichert und sind read-only — sie können kein Geld bewegen. Es gibt keinen Anbieter-Server, an den etwas ginge. Du kannst das jederzeit mit einem Netzwerk-Monitor selbst überprüfen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich technisches Wissen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Du trägst deine Wallet-Adresse bzw. einen Read-only-API-Key ein — den Rest macht die App: importieren, zuordnen, den deutschen Report berechnen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Börsen & Blockchains werden unterstützt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blockchains: Solana (inkl. nativem Staking), Ethereum, Base, Bitcoin, Sui, Tron, Hyperliquid. Börsen (read-only API): Kraken, Bybit, Binance, BingX, Blofin, Hyperliquid. Dazu Trade Republic, Ledger und CSV-Import. Kurse: CoinGecko, DefiLlama, EZB."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ersetzt das meinen Steuerberater?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Krypto-Steuer liefert die Berechnung und die Belege dafür. Die finale steuerliche Einordnung trifft dein Steuerberater — die Reports sind so aufbereitet, dass er direkt damit arbeiten kann."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet es?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aktuell ist es eine kostenlose Beta für Tester. Ein faires Preismodell folgt — Beta-Tester informieren wir rechtzeitig und fair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie steht ihr zu meinen Daten / DSGVO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deine Daten bleiben lokal — es gibt keinen Upload. Auch diese Website ist bewusst datensparsam: keine Cookies, keine externen Schriften/Skripte, kein Tracking. Details in der Datenschutzerklärung."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Krypto-Steuer Startseite">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      </span>
+      Krypto-Steuer
+    </a>
+
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="#funktionen">Funktionen</a></li>
+        <li><a href="#sicherheit">Sicherheit</a></li>
+        <li><a href="#steuerberater">Für Steuerberater</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn-primary nav-cta desk" href="#kontakt">Beta anfragen</a>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#funktionen">Funktionen</a></li>
+      <li><a href="#sicherheit">Sicherheit</a></li>
+      <li><a href="#steuerberater">Für Steuerberater</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-primary" href="#kontakt">Beta anfragen</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="badge reveal"><span class="dot" aria-hidden="true"></span>Beta · lokal · Made in Germany</span>
+      <h1 class="reveal" data-delay="1">Deine Krypto-Steuer. <br class="br-hero">Auf deinem Rechner. <br class="br-hero"><span class="accent">Nachprüfbar.</span></h1>
+      <p class="hero-sub reveal" data-delay="2">Deutsche Steuer-Reports (§23/§22/§20) für Solana, Ethereum, Bitcoin &amp; 13 weitere Quellen — inklusive der komplizierten DeFi-Fälle. Ohne Cloud, ohne Konto, ohne dass deine Daten je deinen Rechner verlassen.</p>
+      <div class="hero-cta reveal" data-delay="3">
+        <a class="btn btn-primary btn-lg" href="#kontakt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          Beta anfragen
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#sicherheit">Wie es funktioniert</a>
+      </div>
+      <div class="trust-line reveal" data-delay="4">
+        <span>Kein Upload</span>
+        <span>Keine Telemetrie</span>
+        <span>Kein Anbieter-Server</span>
+        <span>Read-only-Keys</span>
+      </div>
+    </div>
+
+    <div class="reveal" data-delay="2">
+      <figure class="window hero-window" style="margin:0">
+        <div class="window-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            Krypto-Steuer · lokal auf deinem Rechner
+          </span>
+        </div>
+        <div class="window-body">
+          <img src="assets/quellen.png" alt="Screenshot der App: Quellen verbinden — Wallets (Solana, Ethereum, Base, Sui, Tron, Bitcoin) und Börsen per read-only API." loading="eager" width="1280" height="530">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROBLEM ===================== -->
+<section class="problem section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Das Problem</span>
+      <h2>Krypto-Steuer in Deutschland ist ein Albtraum.</h2>
+      <p>Viele Wallets, Solana-DeFi, Futures, Airdrops — und die großen Cloud-Tools verlangen, dass du dein komplettes Vermögen auf fremde Server hochlädst, um es überhaupt berechnen zu lassen.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card reveal" data-delay="1">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 5v14"/></svg>
+        </div>
+        <span class="num-badge">01</span>
+        <h3>Zu viele Quellen</h3>
+        <p>Ein halbes Dutzend Wallets, mehrere Börsen, Ledger, CSV-Exporte. Alles landet in unterschiedlichen Formaten — von Hand zusammenzuführen ist praktisch unmöglich.</p>
+      </article>
+      <article class="card reveal" data-delay="2">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l7-5 7 5M5 8v8l7 5 7-5V8"/></svg>
+        </div>
+        <span class="num-badge">02</span>
+        <h3>DeFi &amp; Solana sprengen jedes Tool</h3>
+        <p>Swaps, Airdrops, wertlose Spam-Token, Anschaffungskosten über Wallet-Grenzen hinweg. Genau hier rechnen die meisten Tools falsch — oft um ein Vielfaches.</p>
+      </article>
+      <article class="card reveal" data-delay="3">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M21 3 12 12"/><path d="M16 3h5v5"/></svg>
+        </div>
+        <span class="num-badge">03</span>
+        <h3>Alles in fremde Clouds</h3>
+        <p>Cloud-Tools funktionieren nur, wenn du deine kompletten Wallet- und Handelsdaten hochlädst. Ein vollständiges Profil deines Vermögens — auf Servern, die du nicht kontrollierst.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SICHERHEIT (CORE) ===================== -->
+<section class="security section-pad" id="sicherheit">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Sicherheit &amp; Datenschutz</span>
+      <h2>Vertrauen durch Nachprüfbarkeit — nicht durch Versprechen.</h2>
+      <p>Andere sagen „vertrau uns". Wir zeigen dir, was das Tool tut und was nicht — und du kannst es selbst kontrollieren.</p>
+    </div>
+
+    <!-- TUT / TUT NICHT -->
+    <div class="tut-grid">
+      <div class="tut-col does reveal" data-delay="1">
+        <h3>Was das Tool <span class="tag">tut</span></h3>
+        <ul class="tut-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+            <span class="txt">Läuft <strong>komplett lokal</strong> auf deinem Rechner.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+            <span class="txt">Spricht <strong>direkt mit Börsen &amp; Blockchains</strong> — nur mit deinem Read-only-Key.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+            <span class="txt">Speichert API-Keys <strong>verschlüsselt im OS-Schlüsselbund</strong>.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+            <span class="txt">Legt alles <strong>offen im Finanzamt-Export</strong> dar — jeder Wert ist belegt.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tut-col doesnt reveal" data-delay="2">
+        <h3>Was es <span class="tag">nicht tut</span></h3>
+        <ul class="tut-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            <span class="txt">Keine Cloud, kein Upload — nichts wird hochgeladen.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            <span class="txt">Kein Server des Anbieters — deine Daten gehen nie an uns.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            <span class="txt">Keine Telemetrie, kein Tracking, kein Konto.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            <span class="txt">Keine Auszahlungsrechte — Read-only-Keys können kein Geld bewegen.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MEMORABLE ELEMENT: terminal + comparison -->
+    <div class="section-head reveal" style="margin-bottom:28px; margin-top:8px">
+      <span class="eyebrow">Prüf es selbst</span>
+      <h2>Diese Server kontaktiert die App — und sonst keine.</h2>
+    </div>
+
+    <div class="verify-grid">
+      <div class="terminal reveal" data-delay="1" role="img" aria-label="Liste aller Hosts, mit denen die App kommuniziert: Börsen mit Read-only-Key, Blockchains und Kurs-Dienste — und kein Anbieter-Server.">
+        <div class="terminal-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="ttitle">netzwerk-monitor · ausgehende verbindungen</span>
+        </div>
+        <div class="terminal-body" aria-hidden="true">
+          <span class="term-comment"># ausgehende Verbindungen der App</span>
+          <span class="term-group">Börsen <span class="term-note">(nur mit deinem Read-only-Key)</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">api.binance.com</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">api.bybit.com</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">api.kraken.com</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">open-api.bingx.com</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">openapi.blofin.com</span></span>
+          <span class="term-group">Blockchains / RPC</span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">Solana</span> <span class="term-note">· Ethereum (Etherscan)</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">Base</span> <span class="term-note">(Blockscout) · Bitcoin (mempool.space)</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">Sui</span> <span class="term-note">· Tron · Hyperliquid</span></span>
+          <span class="term-group">Kurse <span class="term-note">(nur Preise, keine Kontodaten)</span></span>
+          <span class="term-line"><span class="term-prompt">→</span> <span class="term-host">CoinGecko</span> <span class="term-note">· DefiLlama · EZB (frankfurter.app)</span></span>
+          <span class="term-none"><strong>✓ kein Anbieter-Server · keine Telemetrie · kein Tracking</strong>…und sonst nichts.</span>
+        </div>
+      </div>
+
+      <div class="verify-side">
+        <div class="compare cloud reveal" data-delay="2">
+          <h4>Cloud-Tools</h4>
+          <p class="lead">Du lädst alles hoch.</p>
+          <p>Deine kompletten Wallet- und Handelsdaten liegen auf fremden Servern. Was dort passiert, ist eine <strong>Blackbox</strong> — du musst es glauben.</p>
+        </div>
+        <div class="compare local reveal" data-delay="3">
+          <h4>Krypto-Steuer</h4>
+          <p class="lead">Alles bleibt auf deinem Rechner.</p>
+          <p>Die App holt nur ab, was sie zum Rechnen braucht — direkt von der Quelle. Jeder Datenfluss ist <strong>nachprüfbar</strong>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="verify-foot reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+      <span>Prüf es selbst mit einem Netzwerk-Monitor (z.&nbsp;B. Little Snitch). Was du siehst, ist genau diese Liste — nichts geht an uns.</span>
+    </div>
+
+    <!-- Embedded proof -->
+    <div class="proof">
+      <div class="caption reveal">
+        <h3>Der Datenschutz-Tab liegt offen in der App.</h3>
+        <p>Kein Kleingedrucktes: Die App sagt dir jederzeit, was lokal bleibt und was sie kontaktiert — inklusive einer ehrlichen Warnung, falls Keys mal <em>nicht</em> verschlüsselt liegen (z.&nbsp;B. im Dev-Modus). In der installierten App sind sie es.</p>
+      </div>
+      <figure class="window frame reveal" data-delay="1" style="margin:0">
+        <div class="window-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">Datenschutz &amp; Sicherheit</span>
+        </div>
+        <div class="window-body">
+          <img src="assets/datenschutz.png" alt="Screenshot des Datenschutz-Tabs der App: Was das Tool tut und was es nicht tut, plus Liste der kontaktierten Server." loading="lazy" width="1280" height="530">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FUNKTIONEN ===================== -->
+<section class="section-pad" id="funktionen">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Funktionen</span>
+      <h2>Gebaut für die Fälle, an denen andere scheitern.</h2>
+      <p>Ehrlich und konkret: keine Feature-Liste zum Angeben, sondern die Dinge, die eine korrekte deutsche Krypto-Steuer wirklich braucht.</p>
+    </div>
+
+    <div class="grid feature-grid">
+      <article class="card feature-card reveal" data-delay="1">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+        </div>
+        <h3>16+ Quellen an einem Ort</h3>
+        <p>Wallets &amp; Chains (Solana inkl. nativem Staking, Ethereum, Base, Bitcoin, Sui, Tron) + Börsen per Read-only-API + Trade Republic, Ledger und CSV.</p>
+        <div class="tags">
+          <span class="chip">Solana</span><span class="chip">Ethereum</span><span class="chip">Base</span><span class="chip">Bitcoin</span><span class="chip">Sui</span><span class="chip">Tron</span>
+          <span class="chip">Kraken</span><span class="chip">Bybit</span><span class="chip">Binance</span><span class="chip">BingX</span><span class="chip">Blofin</span><span class="chip">Hyperliquid</span>
+        </div>
+      </article>
+
+      <article class="card feature-card reveal" data-delay="2">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10M7 7l-3 4 8 6 8-6-3-4M4 11l8 10 8-10"/></svg>
+        </div>
+        <h3>Komplexes DeFi &amp; Solana</h3>
+        <p>Bewertet Swaps über den <strong>real geflossenen Gegenwert</strong> — nicht über fehleranfällige Feed-Preise. Zieht Anschaffungskosten über Wallet-Grenzen und behandelt wertlose Spam-Token korrekt.</p>
+      </article>
+
+      <article class="card feature-card reveal" data-delay="3">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M6 5v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5M9 9h6M9 13h6"/></svg>
+        </div>
+        <h3>Deutsches Steuerrecht sauber getrennt</h3>
+        <p>Jede Einkunftsart landet dort, wo sie hingehört — mit tagesgenauer Haltefrist, Freigrenzen und BMF-konformer Zuordnung.</p>
+        <div class="law-grid grid" style="margin-top:18px; gap:14px">
+          <div class="law-card"><div class="para">§23</div><h4>Private Veräußerung</h4><p>FIFO, wallet-bezogen (BMF-konform), Haltefrist tagesgenau, Freigrenze.</p></div>
+          <div class="law-card"><div class="para">§22</div><h4>Sonstige Einkünfte</h4><p>Staking &amp; Airdrops, 256&nbsp;€ Freigrenze pro Jahr.</p></div>
+          <div class="law-card"><div class="para">§20</div><h4>Termingeschäfte</h4><p>Futures/Perps → Anlage&nbsp;KAP, sauber herausgehalten.</p></div>
+        </div>
+      </article>
+
+      <article class="card feature-card reveal" data-delay="1">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Vollständigkeitsnachweis</h3>
+        <p>Gleicht importierte Bewegungen gegen dein echtes On-Chain-Guthaben ab (Reconciliation) — der Beleg fürs Finanzamt, dass nichts fehlt.</p>
+      </article>
+
+      <article class="card feature-card reveal" data-delay="2">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15" r="1.3"/></svg>
+        </div>
+        <h3>Verschlüsselte Keys</h3>
+        <p>API-Keys liegen im OS-Schlüsselbund (Keychain / Windows Credential Manager) — verschlüsselt, nur read-only, nie im Klartext neben deinen Daten.</p>
+      </article>
+
+      <article class="card feature-card reveal" data-delay="3">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5m0-5h-5"/></svg>
+        </div>
+        <h3>Futures &amp; Perps korrekt als §20</h3>
+        <p>Termingeschäfte werden sauber von §23 getrennt und mit Jahres-Summen für die Anlage KAP ausgewiesen — kein Vermischen der Einkunftsarten.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STEUERBERATER ===================== -->
+<section class="berater section-pad" id="steuerberater">
+  <div class="wrap">
+    <div class="berater-grid">
+      <div>
+        <div class="section-head reveal" style="margin-bottom:0">
+          <span class="eyebrow">Für Steuerberater</span>
+          <h2>Krypto-Mandate, ohne Kopfschmerzen.</h2>
+          <p>Getrennte Datenräume, abgabefertige Reports und ein Vollständigkeitsnachweis, den du dem Finanzamt hinlegen kannst.</p>
+        </div>
+        <ul class="berater-list reveal" data-delay="1">
+          <li>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-1a4 4 0 0 1 4-4h2M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><rect x="14" y="13" width="7" height="7" rx="1.5"/><path d="M17.5 13v-1.5a1.5 1.5 0 0 1 3 0V13"/></svg></span>
+            <div><h4>Mandanten-Workspaces</h4><p>Getrennte Datenräume pro Mandant. Keine Vermischung, kein Durcheinander — jeder Fall bleibt für sich.</p></div>
+          </li>
+          <li>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l4 4v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M15 3v5h5M9 13h6M9 17h6"/></svg></span>
+            <div><h4>Abgabefertiger Report pro Mandant</h4><p>Anlage&nbsp;SO (§23) + §22 (mit Freigrenze) + Anlage&nbsp;KAP (§20) + Einzelaufstellung + Vollständigkeitsnachweis. Druckbar als PDF.</p>
+              <div class="report-tags"><span class="chip law">Anlage SO</span><span class="chip law">§22</span><span class="chip law">Anlage KAP</span><span class="chip law">Einzelaufstellung</span><span class="chip law">PDF</span></div>
+            </div>
+          </li>
+          <li>
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><h4>Belege statt Blackbox</h4><p>Jeder Wert im Report ist nachvollziehbar bis zur On-Chain-Transaktion. Annahmen werden offen gekennzeichnet.</p></div>
+          </li>
+        </ul>
+        <div class="hero-cta reveal" data-delay="2" style="margin-top:32px">
+          <a class="btn btn-primary" href="mailto:maik.hartmann@gmail.com?subject=Steuerberater%20%E2%80%93%20Krypto-Steuer%20testen">Als Steuerberater testen / Design-Partner werden</a>
+        </div>
+      </div>
+
+      <figure class="window frame reveal" data-delay="1" style="margin:0">
+        <div class="window-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">Steuer-Report · Anlage SO / §22 / KAP</span>
+        </div>
+        <div class="window-body">
+          <img src="assets/report.png" alt="Screenshot eines Steuer-Reports: Werte für Anlage SO, §22 Nr. 3 EStG mit Freigrenze, Einzelaufstellung der Zuflüsse mit On-Chain-Referenz." loading="lazy" width="1280" height="800">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EHRLICHKEIT ===================== -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Ehrlich bleiben</span>
+      <h2>Was es ist — und was nicht.</h2>
+      <p>Dass wir das offen sagen, ist selbst ein Vertrauenssignal. Wir versprechen nichts, was wir nicht halten.</p>
+    </div>
+    <div class="grid honesty-grid">
+      <article class="honesty-card reveal" data-delay="1">
+        <h3>Aktive Beta</h3>
+        <p>Mit echten Testern und im laufenden Ausbau. Du bekommst ein Werkzeug, das jeden Tag besser wird — und kannst mitgestalten.</p>
+      </article>
+      <article class="honesty-card reveal" data-delay="2">
+        <h3>Kein Ersatz für den Steuerberater</h3>
+        <p>Wir liefern Berechnung und Belege. Die finale steuerliche Einordnung trifft dein Berater — dafür haben wir alles sauber vorbereitet.</p>
+      </article>
+      <article class="honesty-card reveal" data-delay="3">
+        <h3>Ehrlich bei Unsicherheit</h3>
+        <p>Wo Annahmen oder Schätzungen nötig sind, werden sie im Report offen gekennzeichnet — nicht versteckt. Du weißt immer, worauf ein Wert beruht.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="security section-pad" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Häufige Fragen.</h2>
+    </div>
+    <div class="faq reveal">
+      <details class="faq-item">
+        <summary>Ist das sicher — sieht jemand meine Keys oder Daten?<span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-answer">Nein. Alles läuft lokal auf deinem Rechner. API-Keys werden verschlüsselt im OS-Schlüsselbund gespeichert und sind read-only — sie können kein Geld bewegen. Es gibt keinen Anbieter-Server, an den etwas ginge. Du kannst das jederzeit mit einem Netzwerk-Monitor selbst überprüfen.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Brauche ich technisches Wissen?<span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-answer">Nein. Du trägst deine Wallet-Adresse bzw. einen Read-only-API-Key ein — den Rest macht die App: importieren, zuordnen, den deutschen Report berechnen.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Welche Börsen &amp; Blockchains werden unterstützt?<span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-answer"><strong>Blockchains:</strong> Solana (inkl. nativem Staking), Ethereum, Base, Bitcoin, Sui, Tron, Hyperliquid. <strong>Börsen (read-only API):</strong> Kraken, Bybit, Binance, BingX, Blofin, Hyperliquid. Dazu Trade Republic, Ledger und CSV-Import. <span class="mono">Kurse:</span> CoinGecko, DefiLlama, EZB.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Ersetzt das meinen Steuerberater?<span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-answer">Nein. Krypto-Steuer liefert die Berechnung und die Belege dafür. Die finale steuerliche Einordnung trifft dein Steuerberater — die Reports sind so aufbereitet, dass er direkt damit arbeiten kann.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Was kostet es?<span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-answer">Aktuell ist es eine <strong>kostenlose Beta</strong> für Tester. Ein faires Preismodell folgt — Beta-Tester informieren wir rechtzeitig und fair.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Wie steht ihr zu meinen Daten / DSGVO?<span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-answer">Deine Daten bleiben lokal — es gibt keinen Upload. Auch diese Website ist bewusst datensparsam: keine Cookies, keine externen Schriften/Skripte, kein Tracking. Details in der <a href="datenschutz.html">Datenschutzerklärung</a>.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA / KONTAKT ===================== -->
+<section class="section-pad" id="kontakt">
+  <div class="wrap">
+    <div class="cta-final reveal">
+      <h2>Bereit für eine Krypto-Steuer, die du nachprüfen kannst?</h2>
+      <p>Es gibt (noch) kein Konto und keinen Warenkorb — schreib uns einfach kurz, welche Börsen und Chains du nutzt und ob Mac oder Windows. Wir melden uns mit dem Download.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="mailto:maik.hartmann@gmail.com?subject=Beta-Zugang%20Krypto-Steuer&body=Hallo%2C%0A%0Aich%20m%C3%B6chte%20die%20Beta%20testen.%0A%0ABörsen%2FChains%3A%20%0ABetriebssystem%20(Mac%2FWindows)%3A%20%0A%0AViele%20Grüße">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          Beta anfragen
+        </a>
+      </div>
+      <p class="phone">Lieber telefonisch? <a href="tel:+4915164500145">0151 64500145</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          </span>
+          Krypto-Steuer
+        </a>
+        <p class="tagline">Lokale Krypto-Steuer-Software · Made in Germany.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="#kontakt">Beta anfragen</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-disclaimer">Krypto-Steuer ist ein Software-Werkzeug und ersetzt keine steuerliche Beratung.</span>
+      <span>© <span data-year>2026</span> MH Softwareentwicklung</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
