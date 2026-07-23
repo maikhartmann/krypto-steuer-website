@@ -395,7 +395,7 @@ section { position: relative; }
 .window-title svg { width: 12px; height: 12px; }
 .window-body { display: block; background: #fff; }
 .window-body img { width: 100%; display: block; }
-.hero-window { transform: perspective(1600px) rotateY(-3deg) rotateX(1deg); }
+.hero-window { transform: none; }
 
 /* ---------- Generic cards ---------- */
 .grid { display: grid; gap: 20px; }

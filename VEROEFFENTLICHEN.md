@@ -11,7 +11,7 @@ Diese Platzhalter **müssen** vor dem Live-Gang ersetzt werden:
 
 | Platzhalter | Wo | Was eintragen |
 |---|---|---|
-| `DEINE-DOMAIN.de` | `index.html`, `impressum.html`, `datenschutz.html` (canonical + og:url + og:image), `robots.txt`, `sitemap.xml` | Deine echte Domain |
+| `meine-kryptosteuer.de` | `index.html`, `impressum.html`, `datenschutz.html` (canonical + og:url + og:image), `robots.txt`, `sitemap.xml` | Deine echte Domain |
 | `[HIER HOSTING-ANBIETER EINTRAGEN…]` | `datenschutz.html` Abschnitt 3 | z. B. „Netlify, Inc." / „Hetzner Online GmbH" |
 | `[DATUM beim Veröffentlichen eintragen]` | `datenschutz.html` Abschnitt 7 | z. B. „Juli 2026" |
 | USt-IdNr-Zeile | `impressum.html` | Eintragen **oder die Zeile löschen**, wenn du keine hast |
@@ -19,7 +19,7 @@ Diese Platzhalter **müssen** vor dem Live-Gang ersetzt werden:
 Schnell ersetzen (macOS):
 ```bash
 cd website
-grep -rl 'DEINE-DOMAIN.de' . | xargs sed -i '' 's/DEINE-DOMAIN\.de/krypto-steuer.de/g'
+grep -rl 'meine-kryptosteuer.de' . | xargs sed -i '' 's/DEINE-DOMAIN\.de/krypto-steuer.de/g'
 ```
 
 > ⚠️ **Rechtlicher Hinweis:** Impressum und Datenschutzerklärung sind sorgfältige

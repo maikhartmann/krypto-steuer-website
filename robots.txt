@@ -1,5 +1,5 @@
-# TODO: DEINE-DOMAIN.de durch echte Domain ersetzen
+# TODO: meine-kryptosteuer.de durch echte Domain ersetzen
 User-agent: *
 Allow: /
 
-Sitemap: https://DEINE-DOMAIN.de/sitemap.xml
+Sitemap: https://meine-kryptosteuer.de/sitemap.xml
