@@ -109,7 +109,7 @@ h1, h2, h3, h4 {
 p { margin: 0; }
 a { color: var(--accent-deep); text-decoration: none; }
 a:hover { color: var(--accent-2); }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 
 ::selection { background: var(--accent); color: #fff; }
 
@@ -394,7 +394,7 @@ section { position: relative; }
 }
 .window-title svg { width: 12px; height: 12px; }
 .window-body { display: block; background: #fff; }
-.window-body img { width: 100%; display: block; }
+.window-body img { width: 100%; height: auto; display: block; }
 .hero-window { transform: none; }
 
 /* ---------- Generic cards ---------- */
