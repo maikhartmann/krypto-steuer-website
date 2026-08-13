@@ -873,6 +873,21 @@ section { position: relative; }
 .legal .next-reads a { text-decoration: none; font-weight: 600; color: var(--ink); }
 .legal .next-reads a:hover { color: var(--accent-deep); }
 .legal .next-reads span { display: block; font-size: 14.5px; color: var(--ink-3); font-weight: 400; margin-top: 2px; }
+.legal ul.cols {
+  columns: 3; column-gap: 28px; padding-left: 0; list-style: none;
+}
+.legal ul.cols li {
+  break-inside: avoid; margin-top: 0; padding: 7px 0 7px 16px;
+  border-bottom: 1px solid var(--line); position: relative;
+}
+.legal ul.cols li::before {
+  content: ""; position: absolute; left: 0; top: 15px;
+  width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+}
+.legal ul.cols li .chip { display: inline-block; margin-top: 5px; }
+@media (max-width: 760px) { .legal ul.cols { columns: 2; } }
+@media (max-width: 460px) { .legal ul.cols { columns: 1; } }
+
 .hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 34px; }
 .hub-card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
