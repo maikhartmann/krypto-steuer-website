@@ -845,6 +845,13 @@ section { position: relative; }
   /* Long button labels must wrap instead of overflowing narrow screens */
   .hero-cta .btn, .cta-final .cta-row .btn, .mobile-menu .btn { white-space: normal; text-align: center; }
   .verify-foot { font-size: 12.5px; }
+  /* Terminal-Zeilen umbrechen statt seitlich abzuschneiden — die Erklärung hinter dem
+     Gedankenstrich ist der eigentliche Inhalt und darf auf dem Handy nicht wegfallen. */
+  .terminal-body { font-size: 12.5px; }
+  .term-line { white-space: normal; }
+  /* Nur die Erklärung HINTER einem Host bekommt eine eigene Zeile — sonst stünde bei
+     Zeilen ohne Host (✗ …) das Zeichen allein da. */
+  .term-line .term-host + .term-note { display: block; padding-left: 1.7em; }
 }
 
 /* ---------- Very small screens (≤380px, e.g. 360px) ---------- */
