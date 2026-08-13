@@ -1,4 +1,3 @@
-# TODO: meine-kryptosteuer.de durch echte Domain ersetzen
 User-agent: *
 Allow: /
 

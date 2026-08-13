@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!-- TODO: meine-kryptosteuer.de überall durch echte Domain ersetzen (canonical, og:url, sitemap.xml) -->
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Krypto-Steuer – Lokale Krypto-Steuer-Software für Deutschland (§23/§22/§20)</title>
-<meta name="description" content="Lokale Krypto-Steuer-Software für Deutschland: §23/§22/§20 EStG für Solana, Ethereum, Bitcoin & DeFi – über 60 Quellen. Ohne Cloud, ohne Konto – deine Daten bleiben auf dem Rechner.">
+<title>Krypto-Steuer-Software für Deutschland – lokal statt Cloud</title>
+<meta name="description" content="Deutsche Krypto-Steuer-Reports nach §23/§22/§20 aus über 60 Quellen: Solana, Ethereum, Bitcoin, DeFi. Läuft lokal auf deinem Rechner – ohne Cloud, ohne Konto.">
 <meta name="robots" content="index,follow">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://meine-kryptosteuer.de/">
@@ -13,7 +12,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Krypto-Steuer">
-<meta property="og:title" content="Krypto-Steuer – Lokale Krypto-Steuer-Software für Deutschland (§23/§22/§20)">
+<meta property="og:title" content="Krypto-Steuer-Software für Deutschland – lokal statt Cloud">
 <meta property="og:description" content="Deutsche Krypto-Steuer-Reports (§23/§22/§20) für Solana, Ethereum, Bitcoin & DeFi – über 60 Quellen, lokal auf deinem Rechner, ohne Cloud, ohne Konto, nachprüfbar.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://meine-kryptosteuer.de/">
@@ -24,12 +23,26 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Krypto-Steuer – Lokale Krypto-Steuer-Software für Deutschland (§23/§22/§20)">
+<meta name="twitter:title" content="Krypto-Steuer-Software für Deutschland – lokal statt Cloud">
 <meta name="twitter:description" content="Deutsche Krypto-Steuer-Reports (§23/§22/§20) für Solana, Ethereum, Bitcoin & DeFi – über 60 Quellen, lokal, ohne Cloud, ohne Konto, nachprüfbar.">
 <meta name="twitter:image" content="https://meine-kryptosteuer.de/assets/og-image.png">
 
+<link rel="preload" as="image" href="assets/quellen.png" fetchpriority="high">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230F7A63'/%3E%3Cpath d='M8 11V9a4 4 0 018 0v2m-9 0h10v6a1 1 0 01-1 1H8a1 1 0 01-1-1z' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- JSON-LD: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Krypto-Steuer",
+  "alternateName": "Krypto-Steuer \u2013 lokale Krypto-Steuer-Software",
+  "url": "https://meine-kryptosteuer.de/",
+  "inLanguage": "de-DE",
+  "publisher": { "@type": "Organization", "name": "MH Softwareentwicklung" }
+}
+</script>
 
 <!-- JSON-LD: SoftwareApplication -->
 <script type="application/ld+json">
@@ -164,6 +177,7 @@
         <li><a href="#funktionen">Funktionen</a></li>
         <li><a href="#sicherheit">Sicherheit</a></li>
         <li><a href="#steuerberater">Für Steuerberater</a></li>
+        <li><a href="ratgeber/">Ratgeber</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
@@ -179,6 +193,7 @@
       <li><a href="#funktionen">Funktionen</a></li>
       <li><a href="#sicherheit">Sicherheit</a></li>
       <li><a href="#steuerberater">Für Steuerberater</a></li>
+      <li><a href="ratgeber/">Ratgeber</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a class="btn btn-primary" href="#kontakt">Beta anfragen</a></li>
     </ul>
@@ -257,7 +272,7 @@
         </div>
         <span class="num-badge">03</span>
         <h3>Alles in fremde Clouds</h3>
-        <p>Cloud-Tools funktionieren nur, wenn du deine kompletten Wallet- und Handelsdaten hochlädst. Ein vollständiges Profil deines Vermögens, auf Servern, die du nicht kontrollierst.</p>
+        <p>Cloud-Tools funktionieren nur, wenn du deine kompletten Wallet- und Handelsdaten hochlädst. Ein vollständiges Profil deines Vermögens, auf Servern, die du nicht kontrollierst. <a href="ratgeber/krypto-steuer-ohne-cloud.html">Was dabei übertragen wird</a>.</p>
       </article>
     </div>
   </div>
@@ -421,7 +436,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M6 5v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V5M9 9h6M9 13h6"/></svg>
         </div>
         <h3>Deutsches Steuerrecht sauber getrennt</h3>
-        <p>Jede Einkunftsart landet dort, wo sie hingehört: mit tagesgenauer Haltefrist, Freigrenzen und BMF-konformer Zuordnung.</p>
+        <p>Jede Einkunftsart landet dort, wo sie hingehört: mit tagesgenauer Haltefrist, Freigrenzen und BMF-konformer Zuordnung. <a href="ratgeber/freigrenzen-und-fristen.html">Die Fristen und Freigrenzen im Detail</a>.</p>
         <div class="law-grid grid" style="margin-top:18px; gap:14px">
           <div class="law-card"><div class="para">§23</div><h4>Private Veräußerung</h4><p>FIFO, wallet-bezogen (BMF-konform), Haltefrist tagesgenau, Freigrenze.</p></div>
           <div class="law-card"><div class="para">§22</div><h4>Sonstige Einkünfte</h4><p>Staking &amp; Airdrops, 256&nbsp;€ Freigrenze pro Jahr.</p></div>
@@ -442,7 +457,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h6l2 2h10v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M12 12v5m0 0-2-2m2 2 2-2"/></svg>
         </div>
         <h3>Unterlagen fürs Finanzamt – als ein Paket</h3>
-        <p>Das Amt darf die Dateien anfordern, auf denen dein Report beruht (<strong>BMF-Schreiben 06.03.2025, Rz.&nbsp;101</strong>). Ein Klick lädt sie alle: Transaktionsübersicht, Einkünfte §22, Termingeschäfte §20, Transfers, Bestände und die Methodik-Datei.</p>
+        <p>Das Amt darf die Dateien anfordern, auf denen dein Report beruht (<strong>BMF-Schreiben 06.03.2025, Rz.&nbsp;101</strong>). Ein Klick lädt sie alle: Transaktionsübersicht, Einkünfte §22, Termingeschäfte §20, Transfers, Bestände und die Methodik-Datei. <a href="ratgeber/bmf-schreiben-2025-unterlagen.html">Was das Amt konkret verlangt</a>.</p>
         <div class="tags">
           <span class="chip">ZIP</span><span class="chip">Rz. 101</span><span class="chip">Rz. 102/103</span><span class="chip">Methodik</span>
         </div>
@@ -453,7 +468,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
         </div>
         <h3>Kurse sekundengenau, nicht als Tagesmittel</h3>
-        <p>Angesetzt wird der Kurs <strong>im Zeitpunkt</strong> der Anschaffung bzw. des Tauschs (BMF Rz.&nbsp;43/58). Den bequemeren Tageskurs der Rz.&nbsp;91 nehmen wir bewusst nicht in Anspruch – er ist nur eine Nichtbeanstandung, kein gleichwertiger Weg.</p>
+        <p>Angesetzt wird der Kurs <strong>im Zeitpunkt</strong> der Anschaffung bzw. des Tauschs (BMF Rz.&nbsp;43/58). Den bequemeren Tageskurs der Rz.&nbsp;91 nehmen wir bewusst nicht in Anspruch – er ist nur eine Nichtbeanstandung, kein gleichwertiger Weg. <a href="ratgeber/solana-defi-steuer.html">Was der Unterschied ausmacht</a>.</p>
       </article>
 
       <article class="card feature-card reveal" data-delay="2">
@@ -646,6 +661,7 @@
         <p class="tagline">Lokale Krypto-Steuer-Software · Made in Germany.</p>
       </div>
       <nav class="footer-links" aria-label="Footer">
+        <a href="ratgeber/">Ratgeber</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
         <a href="#kontakt">Beta anfragen</a>

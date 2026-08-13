@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: meine-kryptosteuer.de überall durch echte Domain ersetzen -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://meine-kryptosteuer.de/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://meine-kryptosteuer.de/ratgeber/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meine-kryptosteuer.de/ratgeber/bmf-schreiben-2025-unterlagen.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://meine-kryptosteuer.de/ratgeber/freigrenzen-und-fristen.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://meine-kryptosteuer.de/ratgeber/solana-defi-steuer.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://meine-kryptosteuer.de/ratgeber/krypto-steuer-ohne-cloud.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://meine-kryptosteuer.de/impressum.html</loc>

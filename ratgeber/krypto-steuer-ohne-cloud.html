@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krypto-Steuer ohne Cloud: warum lokal sicherer ist</title>
+<meta name="description" content="Was ein Cloud-Dienst über dein Vermögen erfährt, was Read-only-Keys wirklich können – und wie du eine lokale App mit einem Netzwerk-Monitor selbst nachprüfst.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="color-scheme" content="light dark">
+<meta name="author" content="Maik Hartmann-Erdt">
+<meta name="keywords" content="Krypto Steuer ohne Cloud, Krypto Steuer Datenschutz, lokale Krypto Steuer Software, Read-only API Key, Krypto Steuer Software offline">
+<link rel="canonical" href="https://meine-kryptosteuer.de/ratgeber/krypto-steuer-ohne-cloud.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Krypto-Steuer">
+<meta property="og:title" content="Krypto-Steuer ohne Cloud: warum lokal sicherer ist">
+<meta property="og:description" content="Was ein Cloud-Dienst über dein Vermögen erfährt, was Read-only-Keys wirklich können – und wie du eine lokale App mit einem Netzwerk-Monitor selbst nachprüfst.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://meine-kryptosteuer.de/ratgeber/krypto-steuer-ohne-cloud.html">
+<meta property="og:image" content="https://meine-kryptosteuer.de/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Krypto-Steuer – lokale Krypto-Steuer-Software für Deutschland">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Krypto-Steuer ohne Cloud: warum lokal sicherer ist">
+<meta name="twitter:description" content="Was ein Cloud-Dienst über dein Vermögen erfährt, was Read-only-Keys wirklich können – und wie du eine lokale App mit einem Netzwerk-Monitor selbst nachprüfst.">
+<meta name="twitter:image" content="https://meine-kryptosteuer.de/assets/og-image.png">
+
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230F7A63'/%3E%3Cpath d='M8 11V9a4 4 0 018 0v2m-9 0h10v6a1 1 0 01-1 1H8a1 1 0 01-1-1z' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Krypto-Steuer ohne Cloud: warum lokale Software der sicherere Weg ist",
+  "description": "Wer seine Krypto-Steuer in der Cloud rechnet, lädt ein vollständiges Vermögensprofil auf fremde Server. Was dabei übertragen wird, was Read-only-Keys wirklich können – und wie du eine lokale App selbst nachprüfst.",
+  "inLanguage": "de-DE",
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://meine-kryptosteuer.de/ratgeber/krypto-steuer-ohne-cloud.html"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Maik Hartmann-Erdt"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MH Softwareentwicklung",
+    "url": "https://meine-kryptosteuer.de/"
+  },
+  "image": "https://meine-kryptosteuer.de/assets/og-image.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://meine-kryptosteuer.de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ratgeber",
+      "item": "https://meine-kryptosteuer.de/ratgeber/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Krypto-Steuer ohne Cloud",
+      "item": "https://meine-kryptosteuer.de/ratgeber/krypto-steuer-ohne-cloud.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav scrolled" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../index.html" aria-label="Krypto-Steuer Startseite">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      </span>
+      Krypto-Steuer
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-links">
+        <li><a href="../index.html#funktionen">Funktionen</a></li>
+        <li><a href="../index.html#sicherheit">Sicherheit</a></li>
+        <li><a href="index.html">Ratgeber</a></li>
+        <li><a href="../index.html#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta desk" href="../index.html#kontakt">Beta anfragen</a>
+  </div>
+</header>
+
+<main class="wrap legal">
+
+<a class="back" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg> Ratgeber</a>
+
+<span class="kicker">Datenschutz</span>
+<h1>Krypto-Steuer ohne Cloud</h1>
+<p class="lead-note">Um deine Krypto-Steuer zu berechnen, braucht ein Programm deine vollständige Finanzgeschichte.
+Die Frage ist nur, wo sie dabei liegt. Dieser Artikel beschreibt, was ein Cloud-Dienst tatsächlich über dich erfährt,
+was Read-only-Keys können und was nicht – und wie du eine lokale App in fünf Minuten selbst überprüfst.</p>
+<p class="meta">Zuletzt aktualisiert: 13.&nbsp;August 2026 · Lesezeit ca. 6&nbsp;Minuten</p>
+
+<div class="toc">
+  <h2>Inhalt</h2>
+  <ol>
+    <li><a href="#was-hochgeht">Was du hochlädst, wenn du hochlädst</a></li>
+    <li><a href="#adressen">Warum Wallet-Adressen der heikle Teil sind</a></li>
+    <li><a href="#keys">Read-only-Keys: was sie können und was nicht</a></li>
+    <li><a href="#verschluesselt">„Verschlüsselt gespeichert“ – und trotzdem lesbar</a></li>
+    <li><a href="#lokal">Wie es lokal funktioniert</a></li>
+    <li><a href="#selbsttest">Der Selbsttest in fünf Minuten</a></li>
+    <li><a href="#grenzen">Was lokal nicht löst</a></li>
+  </ol>
+</div>
+
+<h2 id="was-hochgeht">Was du hochlädst, wenn du hochlädst</h2>
+<p>Eine Krypto-Steuer-Rechnung braucht lückenlose Daten. Nicht die Jahressumme, sondern jede einzelne Bewegung:
+jeder Kauf, jeder Tausch, jede Belohnung, jeder Transfer zwischen deinen Wallets, mit Zeitstempel und Menge.</p>
+<p>Wenn dieser Datensatz auf einem fremden Server liegt, liegt dort mehr als eine Steuerberechnung. Es ist ein
+vollständiges Profil deines Vermögens: wie viel du hältst, seit wann, worin, auf welchen Plattformen, mit welchen
+Gewohnheiten – und über den Kontostand hinaus auch, was du <em>früher</em> hattest. Kein Kontoauszug einer Bank
+enthält so viel.</p>
+
+<h2 id="adressen">Warum Wallet-Adressen der heikle Teil sind</h2>
+<p>Ein Punkt wird selten ausgesprochen: Eine Blockchain-Adresse ist öffentlich, aber <strong>pseudonym</strong>. Ihr
+Schutz liegt allein darin, dass niemand weiß, dass sie zu dir gehört. Genau diese Verknüpfung stellst du her, wenn du
+deine Adressen zusammen mit einem Konto in einem Online-Dienst hinterlegst.</p>
+<p>Und anders als ein Passwort lässt sich diese Verknüpfung nicht zurücknehmen. Die Blockchain vergisst nichts:
+Wer einmal weiß, welche Adressen dir gehören, kann jede künftige Bewegung darauf mitlesen – dauerhaft, ohne weiteren
+Zugriff auf irgendein Konto. Ein Datenleck bei einem Steuer-Dienst ist deshalb kein Vorfall, den man durch einen
+Passwortwechsel bereinigt.</p>
+
+<h2 id="keys">Read-only-Keys: was sie können und was nicht</h2>
+<p>Börsen bieten API-Schlüssel mit abgestuften Rechten. Ein reiner <strong>Read-only-Key</strong> darf lesen –
+Handelshistorie, Ein- und Auszahlungen, Bestände. Er kann <strong>keine Order auslösen und nichts auszahlen</strong>.
+Genau so einen Schlüssel braucht eine Steuer-Software, und mehr solltest du nie vergeben.</p>
+<p>Zwei Regeln, unabhängig davon, welches Programm du nutzt:</p>
+<ul>
+  <li><strong>Auszahlungsrechte niemals aktivieren.</strong> Keine Steuer-Software braucht sie. Wo eine sie verlangt,
+  ist die Frage nicht, ob du ihr vertraust, sondern warum du es solltest.</li>
+  <li><strong>IP-Beschränkung nutzen, wo die Börse sie anbietet</strong>, und den Schlüssel nach der Steuererklärung
+  wieder löschen. Ein Schlüssel, den es nicht mehr gibt, kann auch nicht abfließen.</li>
+</ul>
+<p>Aber auch ein Read-only-Key bleibt ein Lesezugriff auf dein Konto. Liegt er auf einem fremden Server, kann jeder,
+der dort Zugriff bekommt, deine gesamte Handelshistorie abrufen – und zwar fortlaufend, nicht nur einmal.</p>
+
+<h2 id="verschluesselt">„Verschlüsselt gespeichert“ – und trotzdem lesbar</h2>
+<p>Fast jeder Anbieter wirbt damit, Schlüssel verschlüsselt zu speichern. Das ist richtig und wichtig, beantwortet
+aber nicht die entscheidende Frage: <strong>Wer hat den Schlüssel zum Schlüssel?</strong></p>
+<p>Damit ein Server deine Börsendaten abrufen kann, muss er deinen API-Key im Klartext verwenden. Er muss ihn also
+entschlüsseln können – aus eigener Kraft, ohne dich. „Verschlüsselt gespeichert“ heißt in dieser Architektur:
+geschützt gegen jemanden, der die Festplatte stiehlt. Nicht: unlesbar für den Betreiber. Echte Ende-zu-Ende-
+Verschlüsselung, bei der nur du entschlüsseln kannst, ist mit serverseitigem Abruf technisch unvereinbar.</p>
+<p>Auf dem eigenen Rechner sieht das anders aus: Dort können Schlüssel im Schlüsselbund des Betriebssystems liegen
+(macOS Keychain, Windows Credential Manager). Der Schutz hängt dann an deinem Benutzerkonto – und es gibt keinen
+Betreiber, der ihn aufheben könnte, weil es keinen gibt.</p>
+
+<h2 id="lokal">Wie es lokal funktioniert</h2>
+<p>Der Unterschied ist nicht der Ort der Berechnung, sondern die <strong>Zahl der Beteiligten</strong>. Ein
+Cloud-Dienst schiebt sich zwischen dich und deine Datenquellen: Du gibst ihm deine Zugänge, er holt bei Börse und
+Blockchain ab, rechnet und gibt dir ein Ergebnis. Eine lokale App entfernt diese Zwischenstation. Sie spricht direkt
+mit denselben Stellen, mit denen du auch selbst sprechen würdest – nur automatisiert.</p>
+<p>Damit verschwindet eine ganze Klasse von Risiken, statt sie zu verwalten: kein Anbieter-Konto, das übernommen
+werden kann; keine zentrale Datenbank, die interessant genug ist, um angegriffen zu werden; kein Betreiber, dessen
+Geschäftsmodell sich ändern kann; und kein Dienst, dessen Abschaltung dir deine Nachweise nimmt – die brauchst du
+womöglich noch Jahre später, wenn das Finanzamt nachfragt.</p>
+
+<h2 id="selbsttest">Der Selbsttest in fünf Minuten</h2>
+<p>Das Beste an einer lokalen App ist, dass du ihr nicht glauben musst. Du kannst nachsehen:</p>
+<ol>
+  <li><strong>Netzwerk-Monitor starten.</strong> Auf dem Mac etwa Little Snitch oder LuLu, plattformübergreifend
+  Wireshark. Beides sind Werkzeuge Dritter, die nichts mit dem Hersteller der App zu tun haben.</li>
+  <li><strong>Die App öffnen, Quellen importieren, Report rechnen.</strong> Also genau das tun, wobei Daten flössen,
+  wenn sie flössen.</li>
+  <li><strong>Die Verbindungsliste lesen.</strong> Zu sehen sein sollten ausschließlich die Börsen, die du selbst
+  verbunden hast, die Blockchains deiner Wallets und ein Kurs-Dienst. Nichts sonst.</li>
+</ol>
+<p>Entscheidend ist, was <em>nicht</em> auftaucht: kein Server des Herstellers, kein Analyse-Dienst, kein
+Absturz-Report, kein Ping, der beim Start meldet, dass die App läuft. Diese Prüfung ist der Grund, warum lokale
+Software eine überprüfbare Aussage machen kann, wo Cloud-Dienste nur eine Zusage geben können.</p>
+
+<h2 id="grenzen">Was lokal nicht löst</h2>
+<p>Ehrlicherweise: Ein paar Dinge werden dadurch nicht besser, sondern liegen bei dir.</p>
+<ul>
+  <li><strong>Backups sind deine Sache.</strong> Kein Anbieter hält eine Kopie vor. Festplatte kaputt und kein Backup
+  heißt: neu importieren.</li>
+  <li><strong>Kein Zugriff von überall.</strong> Deine Daten liegen auf einem Rechner – das ist der Punkt, aber eben
+  auch die Einschränkung.</li>
+  <li><strong>Ein Rest bleibt sichtbar.</strong> Die Börse selbst und der Blockchain-Anbieter sehen die Abfrage
+  weiterhin. Lokal heißt: kein <em>zusätzlicher</em> Mitwisser – nicht Unsichtbarkeit.</li>
+  <li><strong>Dein Rechner ist die Grenze.</strong> Ist er kompromittiert, hilft keine Architektur der Welt.</li>
+</ul>
+
+<div class="article-cta">
+  <h2>Wie wir das umsetzen</h2>
+  <p>Krypto-Steuer läuft vollständig auf deinem Rechner: kein Konto, keine Registrierung, keine Telemetrie und kein
+  Server des Anbieters, an den etwas ginge. API-Schlüssel liegen verschlüsselt im Schlüsselbund des Betriebssystems
+  und werden nur read-only verlangt. Welche Hosts die App kontaktiert, führt sie im Datenschutz-Tab namentlich auf –
+  damit dein Netzwerk-Monitor etwas zum Vergleichen hat.</p>
+  <p><a href="../index.html#sicherheit">Sicherheitskonzept ansehen</a> · <a href="../index.html#kontakt">Beta anfragen</a></p>
+</div>
+
+<div class="note-box">
+  <p><strong>Kein Ersatz für steuerliche Beratung.</strong> Dieser Text gibt wieder, wie wir die Rechtslage lesen und
+  wie unsere Software rechnet – er ist keine Steuerberatung im Sinne des Steuerberatungsgesetzes und kann den Blick
+  auf deinen konkreten Fall nicht ersetzen. Maßgeblich sind Gesetz, Verwaltungsanweisungen und die Würdigung deines
+  steuerlichen Beraters. Stand: August&nbsp;2026.</p>
+</div>
+
+<div class="next-reads">
+  <h2>Weiterlesen</h2>
+  <ul>
+    <li><a href="bmf-schreiben-2025-unterlagen.html">Welche Unterlagen das Finanzamt verlangt</a>
+      <span>Rz. 89, 101, 102 und 103 des BMF-Schreibens im Klartext.</span></li>
+    <li><a href="solana-defi-steuer.html">Solana und DeFi: die fünf teuren Fallen</a>
+      <span>Wo Standard-Tools bei Swaps, Spam-Token und Liquid Staking falsch rechnen.</span></li>
+    <li><a href="freigrenzen-und-fristen.html">1.000&nbsp;€, 256&nbsp;€ und ein Jahr</a>
+      <span>Die Freigrenzen und Fristen, auf die es wirklich ankommt.</span></li>
+  </ul>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="../index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          </span>
+          Krypto-Steuer
+        </a>
+        <p class="tagline">Lokale Krypto-Steuer-Software · Made in Germany.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html">Ratgeber</a>
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="../index.html#kontakt">Beta anfragen</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-disclaimer">Krypto-Steuer ist ein Software-Werkzeug und ersetzt keine steuerliche Beratung.</span>
+      <span>© <span data-year>2026</span> MH Softwareentwicklung</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>
